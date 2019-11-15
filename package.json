@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/zwilliamsdev/tentabot#readme",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "giphy-api": "^2.0.1"
   },
   "devDependencies": {
     "eslint-config-standard": "^14.1.0",

@@ -2,8 +2,9 @@
 const Discord = require('discord.js')
 // fs module for filesystem access
 const fs = require('fs')
+
 // Config stuffs
-const { token, prefix, status } = require('./config/config.json')
+const { token, prefix, status, giphyApiKey } = require('./config/config.json')
 
 // Client object
 const client = new Discord.Client()
