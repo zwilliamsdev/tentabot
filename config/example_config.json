@@ -1,3 +1,7 @@
 {
-  "token": "place token here"
+  "token": "token here",
+  "prefix": "?",
+  "owner": "ID of bot owner",
+  "invite": "https://discord.gg/link",
+  "status": "custom status"
 }
