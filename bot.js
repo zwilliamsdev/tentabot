@@ -25,7 +25,10 @@ for (const file of commandFiles) {
 // Once the bot is ready this will fire one time
 client.once('ready', () => {
   // Identify the bots name and user ID
-  console.log(`Logged in as ${client.user.tag} with ID ${client.user.id}`)
+  // console.log(`Logged in as ${client.user.tag} with ID ${client.user.id}`)
+  console.log(
+    `Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`
+  )
   // Set custom "playing" status
   client.user.setActivity(status)
 })

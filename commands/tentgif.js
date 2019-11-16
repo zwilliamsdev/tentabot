@@ -5,10 +5,9 @@ module.exports = {
   name: 'tentgif',
   description: 'Gets a random tentacle gif',
   execute(message, args) {
-    console.log('Running tentgif')
     giphy
       .random({
-        tag: 'tentacle',
+        tag: 'tentacles',
         rating: 'r'
       })
       .then(res => {
