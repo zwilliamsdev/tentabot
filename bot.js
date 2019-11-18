@@ -1,10 +1,10 @@
+// Get environment variables
+require('dotenv').config()
+
 // Discord.js module
 const Discord = require('discord.js')
 // fs module for filesystem access
 const fs = require('fs')
-
-// Config stuffs
-const { token, prefix, status } = require('./config/config.json')
 
 // Client object
 const client = new Discord.Client()
@@ -30,7 +30,7 @@ client.once('ready', () => {
     `Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`
   )
   // Set custom "playing" status
-  client.user.setActivity(status)
+  client.user.setActivity(process.env.STATUS)
 })
 
 // Ran whenever the bot sees a message in chat
@@ -44,7 +44,8 @@ client.on('message', message => {
   }
 
   // If message does not start with the prefix or is the bot speaking end execution
-  if (!message.content.startsWith(prefix) || message.author.bot) return
+  if (!message.content.startsWith(process.env.prefix) || message.author.bot)
+    return
 
   // split spaces out of the message to get arguments
   const args = message.content.slice(prefix.length).split(/ +/)
@@ -67,4 +68,4 @@ client.on('message', message => {
 })
 
 // Bot logs in with this token
-client.login(token)
+client.login(process.env.TOKEN)
