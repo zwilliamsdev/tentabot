@@ -44,11 +44,11 @@ client.on('message', message => {
   }
 
   // If message does not start with the prefix or is the bot speaking end execution
-  if (!message.content.startsWith(process.env.prefix) || message.author.bot)
+  if (!message.content.startsWith(process.env.PREFIX) || message.author.bot)
     return
 
   // split spaces out of the message to get arguments
-  const args = message.content.slice(prefix.length).split(/ +/)
+  const args = message.content.slice(process.env.PREFIX.length).split(/ +/)
   // everything after the first word are the arguments
   const commandName = args.shift().toLowerCase()
 
