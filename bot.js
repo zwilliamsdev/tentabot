@@ -58,9 +58,13 @@ client.on('message', message => {
   // Get the command from the command collection
   const command = client.commands.get(commandName)
 
+  // Get guild information for guild specific commands
+  const guildId = message.guild.id
+  const guild = client.guilds.get(guildId)
+
   // try to execute the command if it fails tell the user an error occured
   try {
-    command.execute(message, args)
+    command.execute(message, args, guild)
   } catch (error) {
     console.error(error)
     message.reply('An error occured processing your command.')
